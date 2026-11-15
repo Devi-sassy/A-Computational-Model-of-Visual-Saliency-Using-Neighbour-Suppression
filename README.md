@@ -34,8 +34,8 @@ S(a,b)=\exp\left(-\frac{(a-b)^2}{2\sigma^2}\right)
 $$
 
 Where:
-- \(a\) and \(b\) represent two orientations.
-- \(\sigma\) controls the width of the similarity function.
+-$a$ and $b$ represent two orientations.
+-$\sigma$ controls the width of the similarity function.
 - Higher similarity indicates that two orientations are more alike.
 
 ### 3. Calculating Neighbour Suppression
