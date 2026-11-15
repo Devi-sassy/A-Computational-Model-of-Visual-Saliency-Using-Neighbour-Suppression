@@ -29,9 +29,9 @@ Gaussian noise is added to the orientations to introduce small variations in the
 
 Similarity between two orientations is calculated using a Gaussian function:
 
-\[
+$$
 S(a,b)=\exp\left(-\frac{(a-b)^2}{2\sigma^2}\right)
-\]
+$$
 
 Where:
 - \(a\) and \(b\) represent two orientations.
@@ -46,10 +46,10 @@ Initially, suppression was calculated by adding the similarity values of all ava
 
 Later, the calculation was modified to use average suppression:
 
-\[
+$$
 \text{Average Suppression}=
 \frac{\text{Total Similarity}}{\text{Number of Neighbours}}
-\]
+$$
 
 This modification was introduced to account for differences in the number of available neighbours at corner, edge, and middle positions.
 
@@ -57,9 +57,10 @@ This modification was introduced to account for differences in the number of ava
 
 The saliency of each element is calculated using:
 
-\[
-\text{Saliency}=\frac{\text{Response}}{1+\text{Suppression}}
-\]
+$$
+\text{Saliency}=
+\frac{\text{Response}}{1+\text{Suppression}}
+$$
 
 Elements with lower suppression receive higher saliency values.
 
