@@ -29,14 +29,12 @@ Gaussian noise is added to the orientations to introduce small variations in the
 
 Similarity between two orientations is calculated using a Gaussian function:
 
-$$
-S(a,b)=\exp\left(-\frac{(a-b)^2}{2\sigma^2}\right)
-$$
+$$S(a,b) = \exp\left(-\frac{(a-b)^2}{2\sigma^2}\right)$$
 
 Where:
--$a$ and $b$ represent two orientations.
--$\sigma$ controls the width of the similarity function.
-- Higher similarity indicates that two orientations are more alike.
+- $a$ and $b$ are two orientations (in degrees)
+- $\sigma$ controls the width of the similarity function
+- Higher similarity means the two orientations are more alike
 
 ### 3. Calculating Neighbour Suppression
 
@@ -46,10 +44,7 @@ Initially, suppression was calculated by adding the similarity values of all ava
 
 Later, the calculation was modified to use average suppression:
 
-$$
-\text{Average Suppression}=
-\frac{\text{Total Similarity}}{\text{Number of Neighbours}}
-$$
+$$\text{Average suppression} = \frac{\text{Total similarity}}{\text{Number of neighbours}}$$
 
 This modification was introduced to account for differences in the number of available neighbours at corner, edge, and middle positions.
 
@@ -57,10 +52,7 @@ This modification was introduced to account for differences in the number of ava
 
 The saliency of each element is calculated using:
 
-$$
-\text{Saliency}=
-\frac{\text{Response}}{1+\text{Suppression}}
-$$
+$$\text{Saliency} = \frac{\text{Response}}{1 + \text{Suppression}}$$
 
 Elements with lower suppression receive higher saliency values.
 
@@ -94,9 +86,10 @@ The same generated displays were used across sigma conditions to make the compar
 
 Response noise was introduced to investigate how variations in the response values influence detection performance.
 
+- Orientation differences: 5° to 20° in steps of 1°
 - Sigma values: 5, 15, and 30
 - Trials per orientation difference: 1,000
-- Response values included Gaussian noise, with a minimum value of 0.01.
+- Response values included Gaussian noise (standard deviation 0.2), with a minimum value of 0.01
 
 **Observation:** Under the tested response-noise conditions, sigma = 5 produced the highest detection accuracy, followed by sigma = 15 and sigma = 30.
 
